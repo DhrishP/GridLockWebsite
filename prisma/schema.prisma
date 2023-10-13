@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model scores {
+  id          Int      @id @default(autoincrement())
+  username    String   @default("Anonymous")
+  secret      String   @default("secretzz")
+  red_score   Int
+  green_score Int
+  created     DateTime @default(now())
+}
