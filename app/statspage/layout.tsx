@@ -3,6 +3,5 @@ export default async function StatsLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return <>{children}</>;
 }

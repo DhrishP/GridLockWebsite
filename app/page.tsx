@@ -4,20 +4,20 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    // Perform localStorage action
+  
     const verify = async () => {
-      //@ts-ignore
-      const username =await JSON.parse(localStorage.getItem("username"));
-      //@ts-ignore
-      const secret =await JSON.parse(localStorage.getItem("secret"));
-      if (username && secret) {
-       return null
-      } else {
+      const username = localStorage.getItem("username");
+
+      const secret = localStorage.getItem("secret");
+
+      if (!username || !secret) {
         localStorage.setItem("username", JSON.stringify(""));
         localStorage.setItem("secret", JSON.stringify(""));
+      } else {
+        return null;
       }
     };
-    verify()
+    verify();
   }, []);
   return (
     <>
