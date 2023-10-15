@@ -17,7 +17,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-purple-600 flex items-center flex-col justify-center space-y-8">
+      <div className="w-screen h-[93vh] bg-purple-600 flex items-center flex-col justify-center space-y-8">
         <div className="text-white text-4xl font-bold font-['Nunito Sans']">
           Login to your Account
         </div>
