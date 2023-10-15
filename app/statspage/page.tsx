@@ -16,8 +16,9 @@ type dataschema = {
 const StatsPage = () => {
   const username = localStorage.getItem("username");
   const secret = localStorage.getItem("secret");
-  let wins: number;
-  let lose: number;
+  let wins: number = 0;
+  let lose: number= 0;
+  let ratio:number = 0;
   if (!username || !secret) window.location.href = "/";
   const { data, isLoading, isError } = useQuery({
     queryKey: ["stats"],
@@ -41,10 +42,15 @@ const StatsPage = () => {
         }
       });
   }
+  ratio = lose === 0 ? wins : wins / lose;
+  console.log(wins, lose);
+  console.log(ratio);
+  const highestscore = Math.max(...data.data.map((user: dataschema) => user.green_score));
+  console.log(highestscore);
   return (
     <div>
       {data.data.length > 0 ? (
-       <Stats data ={data.data}/>
+       <Stats highestscore={highestscore} ratio={ratio} wins={wins} />
       ) : (
         <>
           <div>

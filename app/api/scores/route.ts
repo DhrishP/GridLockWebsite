@@ -17,7 +17,9 @@ export async function POST(req: Request) {
         username: true,
       },
     });
+  
     if (!data) return NextResponse.json("No data found");
+  
     const schemadata = data.map((item) => ({
       id: item.id,
       red_score: item.red_score,
