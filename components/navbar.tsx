@@ -5,12 +5,12 @@ import React from "react";
 
 const Navbar = () => {
   const path = usePathname();
-  console.log(path);
+  
 
   return (
     <nav className="bg-slate-200  p-3 flex items-center justify-evenly px-20">
       <div className="container mx-auto flex items-center justify-between">
-        <div className=" font-bold text-xl">Your Logo</div>
+        <div className=" font-bold text-xl">GRIDLOCK</div>
         <div className="flex space-x-4 items-center">
           <a
             href="/"
